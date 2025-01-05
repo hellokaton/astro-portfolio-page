@@ -1,0 +1,82 @@
+---
+import LanguageSwitch from "~/components/LanguageSwitch.astro";
+import ThemeToggle from "~/components/ThemeToggle.astro";
+import {SITE_DESCRIPTION, SITE_TITLE, X_ACCOUNT} from "~/const";
+import {LOCALES, type Lang, getLocalePaths, useTranslations} from "~/i18n";
+const t = useTranslations(Astro.currentLocale as Lang);
+
+interface Props {
+    title: string;
+    description?: string;
+}
+
+const {
+    title,
+    description,
+} = Astro.props;
+
+const locale = Astro.currentLocale as Lang;
+const localeTitle = title ? `${title} - ${t(SITE_TITLE)}` : t(SITE_TITLE);
+const localeDescription = description || t(SITE_DESCRIPTION);
+
+---
+<!DOCTYPE html>
+<html lang={LOCALES[locale].lang || locale} dir={LOCALES[locale].dir || null} class="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    <meta name="generator" content={Astro.generator}/>
+    <meta name="description" content={localeDescription}/>
+
+    {
+        getLocalePaths(Astro.url).map((props) => (
+                <link
+                        rel="alternate"
+                        hreflang={LOCALES[props.lang].lang || props.lang}
+                        href={Astro.site?.origin + props.path}
+                />
+        ))
+    }
+
+    <!-- icon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" sizes="192x192" href="/android-chrome.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={localeTitle} />
+    <meta property="og:site_name" content={localeTitle} />
+    <meta property="og:description" content={localeDescription} />
+    <meta property="og:image" content={Astro.site + "ogp.png"} />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:locale" content={LOCALES[locale].lang || locale} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content={t(X_ACCOUNT)} />
+
+    <!-- Geist Mono 字体预加载配置 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            rel="preload"
+            as="style"
+            href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap"
+    />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap"
+            rel="stylesheet"
+            media="print"
+            onload="this.media='all'"
+    />
+    <title>{localeTitle}</title>
+</head>
+<body>
+<div class="fixed top-4 right-4 flex items-center space-x-4">
+    <LanguageSwitch/>
+    <ThemeToggle/>
+</div>
+<slot/>
+</body>
+</html>

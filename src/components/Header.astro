@@ -1,0 +1,58 @@
+---
+import {type Lang, useTranslations} from "~/i18n";
+const t = useTranslations(Astro.currentLocale as Lang);
+---
+
+<h1 class="text-4xl font-bold text-center">
+    hellokaton
+</h1>
+<div class="flex flex-col gap-4 text-sm text-[#71717A] dark:text-[#A1A1A1] text-left">
+    <p>
+        {
+            t({
+                en: "Hey, fellow explorers!👋",
+                zh: "嗨，探险家们!👋"
+            })
+        }
+    </p>
+    <p>
+        {
+            t({
+                en: "I'm an indie developer on a mission to craft digital experiences that spark joy!",
+                zh: "我是一名独立开发者，致力于创造带来快乐的数字体验！"
+            })
+        }
+    </p>
+    <p>
+        {
+            t({
+                en: "✨ You might know me from my open-source projects in the dev community 🌊, or my YouTube channel where I share coding adventures with 20K amazing subscribers!",
+                zh: "✨ 也许您通过我在 Github 的开源项目🌊或我的 YouTube 频道认识我，在那里我与2万多名出色的订阅者分享编码冒险经历。"
+            })
+        }
+    </p>
+    <p>
+        {
+            t({
+                en: "💡 My journey? From open source contributions to building indie products that solve real problems. I'm that dev who gets excited about clean code as much as a perfectly brewed coffee.",
+                zh: "💡 我的经历？从开源贡献到打造解决实际问题的独立产品。我就是那种对干净的代码和完美冲泡的咖啡同样兴奋的开发者。"
+            })
+        }
+    </p>
+    <p>
+        {
+            t({
+                en: "🌱 Currently building in public and sharing the entire journey - because why keep the fun to yourself?",
+                zh: "🌱 目前，我正在公开分享过程——乐趣不应独享！"
+            })
+        }
+    </p>
+    <p>
+        {
+            t({
+                en: "I'm an eternal optimist who believes in the power of technology to make life better! 🌈 Always open to interesting conversations or collaborations - let's turn coffee into code and dreams into deployments!",
+                zh: "我是一个永远的乐观主义者，相信科技能让生活更美好！🌈 欢迎有意思的交流或合作——让我们把咖啡变成代码，把梦想变成现实！"
+            })
+        }
+    </p>
+</div>

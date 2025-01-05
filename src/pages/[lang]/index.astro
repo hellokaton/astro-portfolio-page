@@ -1,0 +1,79 @@
+---
+import Card from "~/components/Card.astro";
+import Header from '~/components/Header.astro';
+import {LOCALES, type Lang, useTranslations} from "~/i18n";
+import Layout from '~/layouts/Base.astro';
+const t = useTranslations(Astro.currentLocale as Lang);
+
+export const getStaticPaths = () =>
+    Object.keys(LOCALES).map((lang) => ({
+        params: {lang},
+    }));
+---
+
+<Layout title="hellokaton">
+    <main class="flex min-h-screen flex-col items-center justify-center p-8 bg-white dark:bg-black text-black dark:text-white">
+        <div class="w-full max-w-md space-y-4">
+            <Header/>
+            <div class="space-y-4 mt-8">
+                <!--<Subscribe/>-->
+                <div class="inline-flex items-center justify-center w-full">
+                    <hr class="w-full h-px my-4 bg-zinc-200 border-0 dark:bg-zinc-700">
+                    <span class="absolute px-3 font-medium text-xs text-muted-foreground -translate-x-1/2 bg-white dark:bg-black left-1/2 ">
+                        {
+                            t({
+                                en: "socials",
+                                zh: "社交网络",
+                            })
+                        }
+                    </span>
+                </div>
+                <Card icon="x"
+                      title={
+                          t({
+                              en: "Follow @hellokaton",
+                              zh: "关注 @hellokaton",
+                          })
+                      }
+                      description={
+                          t({
+                              en: "I share content publicly here",
+                              zh: "我在这里公开分享内容",
+                          })
+                      }
+                      link="https://x.com/hellokaton?"
+                />
+                <Card icon="github"
+                      title={
+                          t({
+                              en: "Follow @hellokaton",
+                              zh: "关注 @hellokaton",
+                          })
+                      }
+                      description={
+                          t({
+                              en: "My open source code is here",
+                              zh: "我的开源代码在这里",
+                          })
+                      }
+                      link="https://github.com/hellokaton"
+                />
+                <!--<div class="inline-flex items-center justify-center w-full">-->
+                <!--    <hr class="w-full h-px my-4 bg-zinc-200 border-0 dark:bg-zinc-700">-->
+                <!--    <span class="absolute px-3 font-medium text-xs text-muted-foreground -translate-x-1/2 bg-white dark:bg-black left-1/2 ">projects</span>-->
+                <!--</div>-->
+                <!--<Card icon="github"-->
+                <!--      title="growth list"-->
+                <!--      description="steal proven growth tactics from the best marketers"-->
+                <!--      link="https://github.com/hellokaton"-->
+                <!--/>-->
+                <!--<Card icon="github"-->
+                <!--      title="growth list"-->
+                <!--      description="steal proven growth tactics from the best marketers"-->
+                <!--      link="https://github.com/hellokaton"-->
+                <!--      badge="acquired"-->
+                <!--/>-->
+            </div>
+        </div>
+    </main>
+</Layout>
