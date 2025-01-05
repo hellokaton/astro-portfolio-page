@@ -1,0 +1,39 @@
+---
+// 使用：<Social.astro greeting="你好" name="朋友" />
+import {Icon} from 'astro-icon/components'
+
+interface Props {
+    icon: string;
+    title: string;
+    description: string;
+    link?: string;
+    badge?: string;
+}
+
+const {icon, title, description, link, badge} = Astro.props
+---
+
+<div style="opacity: 1; transform: none;">
+    <a class="block" target="_blank" rel="noopener noreferrer" href={link}>
+        <div class="rounded-lg border text-card-foreground relative overflow-hidden transition-colors bg-zinc-50 dark:bg-zinc-900 border-zinc-200 dark:border-zinc-700 hover:border-zinc-500 dark:hover:border-zinc-400">
+            {badge &&
+                    <div class="absolute top-0 right-0 bg-black text-white dark:bg-white dark:text-black text-xs font-semibold px-2 py-1 rounded rounded-tl-none rounded-br-none">
+                        {badge}
+                    </div>
+            }
+            <div class="flex items-center p-4">
+                <div class="flex-shrink-0 mr-4">
+                    <Icon name={icon} class="w-5 h-5"/>
+                </div>
+                <div class="flex-grow min-w-0">
+                    <h2 class="text-lg font-medium truncate lowercase text-zinc-900 dark:text-zinc-100">
+                        {title}
+                    </h2>
+                    <p class="text-xs truncate text-zinc-900 dark:text-zinc-100 opacity-80">
+                        {description}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
