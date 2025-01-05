@@ -7,6 +7,6 @@
             onchange="window.location.href = this.value"
     >
         <option value="/" class="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" selected={Astro.url.pathname === '/'}>English</option>
-        <option value="/zh" class="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" selected={Astro.url.pathname === '/zh'}>中文</option>
+        <option value="/zh" class="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" selected={Astro.url.pathname.startsWith('/zh')}>中文</option>
     </select>
 </div>
