@@ -14,6 +14,10 @@ A modern, performant and SEO-friendly blog template built with Astro and Tailwin
 - 🎯 Zero JavaScript by default
 - 🎨 Dark mode support
 
+## 📸 Screenshots
+
+<img src="screenshots/Snipaste_1.png" width="600px" />
+
 ## 🛠️ Quick Start
 
 1. Clone this repository:
