@@ -19,7 +19,7 @@ A modern, performant and SEO-friendly blog template built with Astro and Tailwin
 1. Clone this repository:
 
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/hellokaton/hellokaton.me.git
 ```
 
 2. Install dependencies:
@@ -60,20 +60,6 @@ pnpm build
 1. Add your language in `src/pages/[lang]/`
 2. Create corresponding translation files
 3. Update language switcher component
-
-## 📝 Creating Blog Posts
-
-Add your Markdown/MDX files in `src/content/blog/[lang]/` following the format:
-
-```markdown
----
-title: Your Post Title
-description: Post description
-date: 2024-03-21
----
-
-Your content here...
-```
 
 ## 🎨 Customization
 
