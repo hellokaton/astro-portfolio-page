@@ -3,10 +3,10 @@
 <div class="relative inline-block">
     <select
             id="language-switch"
-            class="appearance-none bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-300 dark:focus:ring-zinc-600"
+            class="appearance-none bg-transparent border border-zinc-200 dark:border-zinc-700 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-zinc-300 dark:focus:ring-zinc-600 text-zinc-900 dark:text-zinc-100"
             onchange="window.location.href = this.value"
     >
-        <option value="/" class="text-white dark:text-black" selected={Astro.url.pathname === '/'}>English</option>
-        <option value="/zh" class="text-white dark:text-black" selected={Astro.url.pathname === '/zh'}>中文</option>
+        <option value="/" class="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" selected={Astro.url.pathname === '/'}>English</option>
+        <option value="/zh" class="bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100" selected={Astro.url.pathname === '/zh'}>中文</option>
     </select>
 </div>
