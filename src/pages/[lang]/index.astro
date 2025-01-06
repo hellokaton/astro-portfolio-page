@@ -58,21 +58,34 @@ export const getStaticPaths = () =>
                       }
                       link="https://github.com/hellokaton"
                 />
-                <!--<div class="inline-flex items-center justify-center w-full">-->
-                <!--    <hr class="w-full h-px my-4 bg-zinc-200 border-0 dark:bg-zinc-700">-->
-                <!--    <span class="absolute px-3 font-medium text-xs text-muted-foreground -translate-x-1/2 bg-white dark:bg-black left-1/2 ">projects</span>-->
-                <!--</div>-->
-                <!--<Card icon="github"-->
-                <!--      title="growth list"-->
-                <!--      description="steal proven growth tactics from the best marketers"-->
-                <!--      link="https://github.com/hellokaton"-->
-                <!--/>-->
-                <!--<Card icon="github"-->
-                <!--      title="growth list"-->
-                <!--      description="steal proven growth tactics from the best marketers"-->
-                <!--      link="https://github.com/hellokaton"-->
-                <!--      badge="acquired"-->
-                <!--/>-->
+                <div class="inline-flex items-center justify-center w-full">
+                    <hr class="w-full h-px my-4 bg-zinc-200 border-0 dark:bg-zinc-700">
+                    <span class="absolute px-3 font-medium text-xs text-muted-foreground -translate-x-1/2 bg-white dark:bg-black left-1/2 ">
+                        {
+                            t({
+                                en: "Projects",
+                                zh: "作品",
+                            })
+                        }
+                    </span>
+                </div>
+                <Card icon="project"
+                      title="bioify"
+                      description="AI-Powered Bio Generator for Social Media Professionals"
+                      link="https://bioify.co"
+                />
+                <Card icon="project"
+                      title="polish"
+                      description="A Chrome extension built with WXT and shadcn/ui that helps you polish text with AI capabilities"
+                      link="https://github.com/hellokaton/text-polish-chrome-extension"
+                      badge="opensource"
+                />
+                <Card icon="project"
+                      title="text-moderation-api"
+                      description="Text moderation API service developed using Hono"
+                      link="https://github.com/hellokaton/text-moderation-api"
+                      badge="opensource"
+                />
             </div>
         </div>
     </main>
