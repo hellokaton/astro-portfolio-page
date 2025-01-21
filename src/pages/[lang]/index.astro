@@ -71,29 +71,54 @@ export const getStaticPaths = () =>
                 </div>
                 <Card icon="project"
                       title="bioify"
-                      description="AI-Powered Bio Generator for Social Media Professionals"
+                      description={
+                          t({
+                              en: "AI-Powered Bio Generator for Social Media Professionals",
+                              zh: "AI驱动的社交媒体个人简介生成器",
+                          })
+                      }
                       link="https://bioify.co"
                 />
                 <Card icon="project"
                       title="NameSage"
-                      description="AI-Powered Chinese Name Generator"
+                      description={
+                          t({
+                              en: "AI-Powered Chinese Name Generator",
+                              zh: "为非中文人士取有意义的中文名",
+                          })
+                      }
                       link="https://namesaga.hellokaton.me"
                 />
                 <Card icon="project"
                       title="Pixiv Helper"
-                      description="A Chrome Extension for Pixiv Illustrations"
+                      description={
+                          t({
+                              en: "A Chrome Extension for Pixiv Illustrations",
+                              zh: "shadcn + wxt 开发的下载 Pixiv 插画插件",
+                          })
+                      }
                       link="https://github.com/hellokaton/pixiv-helper"
                       badge="opensource"
                 />
                 <Card icon="project"
                       title="polish"
-                      description="A Chrome extension built with WXT and shadcn/ui that helps you polish text with AI capabilities"
+                      description={
+                          t({
+                              en: "A Chrome extension built with WXT and shadcn/ui that helps you polish text with AI capabilities",
+                              zh: "使用WXT和shadcn/ui构建的AI解释、翻译Chrome插件",
+                          })
+                      }
                       link="https://github.com/hellokaton/text-polish-chrome-extension"
                       badge="opensource"
                 />
                 <Card icon="project"
                       title="text-moderation-api"
-                      description="Text moderation API service developed using Hono"
+                      description={
+                          t({
+                              en: "Text moderation API service developed using Hono",
+                              zh: "使用 Hono 开发一个简单的文本审核API",
+                          })
+                      }
                       link="https://github.com/hellokaton/text-moderation-api"
                       badge="opensource"
                 />
